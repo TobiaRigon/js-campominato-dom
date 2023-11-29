@@ -22,6 +22,9 @@ playButton.addEventListener("click", function () {
     let numBombe = 16;
     let bombe = [];
     let celleNonBombeCliccate = 0;
+    let giocoTerminato = false;
+
+
 
 
 
@@ -45,10 +48,17 @@ playButton.addEventListener("click", function () {
     console.log(bombe);
 
     for (let i = 0; i < numCelle; i++) {
+
         const newElement = createMyElement("div", difficoltaSelezionata);
         newElement.append(i + 1);
 
-        newElement.addEventListener("click", function () {
+        newElement.addEventListener("click", 
+        function () {
+
+            if (giocoTerminato === true) {
+                return;
+            }
+
             // Se la cella è una bomba
             if (bombe.includes(i + 1)) {
                 newElement.classList.add("clicked-bomba");
@@ -59,11 +69,11 @@ playButton.addEventListener("click", function () {
                 messaggioDiv.textContent = "Hai calpestato una bomba! Il tuo punteggio è: " + document.querySelectorAll('.clicked').length;
                 document.body.appendChild(messaggioDiv);
 
+                giocoTerminato = true;
+
             } else {
                 newElement.classList.add("clicked");
 
-
-                newElement.classList.add("clicked");
                 // Incrementa il contatore se la cella cliccata non è una bomba
                 celleNonBombeCliccate++;
 
@@ -72,6 +82,7 @@ playButton.addEventListener("click", function () {
                     messaggioDiv.classList.add("messaggio-verde");
                     messaggioDiv.textContent = "Complimenti! Hai vinto!";
                     document.body.appendChild(messaggioDiv);
+                    giocoTerminato = true;
                 }
                
                 
