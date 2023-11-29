@@ -117,12 +117,20 @@ border: 1px solid black;
    top: 0;
    left: 0;
    width: 100%;
-   background-color: rgba(255, 0, 0, 0.8); /* Sfondo rosso traslucido */
+   background-color: rgba(255, 0, 0, 0.8); 
    color: white;
    text-align: center;
    padding: 10px;
    font-size: 18px;
-   z-index: 1000; /* Assicura che sia sopra gli altri elementi */
+   z-index: 1000; 
+}
+
+.messaggio-rosse{
+   background-color: rgba(255, 0, 0, 0.8); 
+}
+
+.messaggio-verde{
+   background-color: rgba(37, 154, 2, 0.8); 
 }
  
 

@@ -21,6 +21,9 @@ playButton.addEventListener("click", function () {
     let difficoltaSelezionata = "cell";
     let numBombe = 16;
     let bombe = [];
+    let celleNonBombeCliccate = 0;
+
+
 
     // Logica per determinare la difficoltà selezionata
     if (difficolta.value === "Difficile") {
@@ -49,6 +52,8 @@ playButton.addEventListener("click", function () {
             // Se la cella è una bomba
             if (bombe.includes(i + 1)) {
                 newElement.classList.add("clicked-bomba");
+
+                messaggioDiv.classList.add("messaggio-rosso");
                 
                 
                 messaggioDiv.textContent = "Hai calpestato una bomba! Il tuo punteggio è: " + document.querySelectorAll('.clicked').length;
@@ -56,7 +61,20 @@ playButton.addEventListener("click", function () {
 
             } else {
                 newElement.classList.add("clicked");
-                // Aggiungi altre logiche di gioco se necessario
+
+
+                newElement.classList.add("clicked");
+                // Incrementa il contatore se la cella cliccata non è una bomba
+                celleNonBombeCliccate++;
+
+                // Se tutte le celle non bombe sono state cliccate, mostra un messaggio di vittoria
+                if (celleNonBombeCliccate === numCelle - numBombe) {
+                    messaggioDiv.classList.add("messaggio-verde");
+                    messaggioDiv.textContent = "Complimenti! Hai vinto!";
+                    document.body.appendChild(messaggioDiv);
+                }
+               
+                
             }
         });
 
