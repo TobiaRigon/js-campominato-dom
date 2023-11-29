@@ -45,8 +45,6 @@ playButton.addEventListener("click", function () {
         }
     }
 
-    console.log(bombe);
-
     for (let i = 0; i < numCelle; i++) {
 
         const newElement = createMyElement("div", difficoltaSelezionata);
@@ -66,7 +64,7 @@ playButton.addEventListener("click", function () {
                 messaggioDiv.classList.add("messaggio-rosso");
                 
                 
-                messaggioDiv.textContent = "Hai calpestato una bomba! Il tuo punteggio è: " + document.querySelectorAll('.clicked').length;
+                messaggioDiv.textContent = "Hai calpestato una bomba! Il tuo punteggio è: " + document.querySelectorAll('.clicked').length + ". Clicca qui per ricominciare." ;
                 document.body.appendChild(messaggioDiv);
 
                 giocoTerminato = true;
@@ -80,7 +78,7 @@ playButton.addEventListener("click", function () {
                 // Se tutte le celle non bombe sono state cliccate, mostra un messaggio di vittoria
                 if (celleNonBombeCliccate === numCelle - numBombe) {
                     messaggioDiv.classList.add("messaggio-verde");
-                    messaggioDiv.textContent = "Complimenti! Hai vinto!";
+                    messaggioDiv.textContent = "Complimenti! Hai vinto! Clicca qui per ricominciare.";
                     document.body.appendChild(messaggioDiv);
                     giocoTerminato = true;
                 }
@@ -88,6 +86,14 @@ playButton.addEventListener("click", function () {
                 
             }
         });
+
+        messaggioDiv.addEventListener("click", function () {
+            // Rimuovi l'elemento del messaggio dal corpo del documento
+            document.body.removeChild(messaggioDiv);
+            // Ricarica la pagina
+            location.reload();
+        });
+
 
         gridElement.append(newElement);
     }
