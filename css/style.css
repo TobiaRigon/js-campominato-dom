@@ -1,0 +1,121 @@
+/* stili generali */
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ :root{
+    font-family:sans-serif;
+ }
+
+ header{
+    height: 80px;
+    
+ }
+
+ footer{
+    height: 80px;
+ }
+
+ main{
+    background-color: aquamarine;
+    height: calc(100vh - 160px);
+ }
+
+ .container{
+    max-width: 80%;
+    margin: 0 auto;
+ }
+
+ /* header */
+
+ header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .container div{
+    display: flex;
+    align-items: center;
+ }
+
+ header div img{
+    height: 80px;
+  
+ }
+
+ header h1{
+    display: inline-block;
+ }
+
+ header button{
+    padding:5px;
+    
+ }
+
+ /* footer */
+
+ footer span{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 80px;
+ }
+
+ /* main */
+
+ main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .grid{
+    height: 95%;
+    width: calc(((100vh - 160px) * 95 ) / 100 );
+    display: flex;
+    flex-wrap: wrap;
+ }
+
+ .cell{
+ width: calc((((100vh - 160px) * 95 ) / 100) /10 );
+ height:calc((((100vh - 160px) * 95 ) / 100) /10 ) ;
+ line-height:calc((((100vh - 160px) * 95 ) / 100) /10 ) ;
+ text-align: center;
+border: 1px solid black;
+ }
+
+ .cell-2{
+    width: calc((((100vh - 160px) * 95 ) / 100) /9 );
+    height:calc((((100vh - 160px) * 95 ) / 100) /9 ) ;
+    line-height:calc((((100vh - 160px) * 95 ) / 100) /9 ) ;
+    text-align: center;
+   border: 1px solid black;
+    }
+
+    .cell-3{
+        width: calc((((100vh - 160px) * 95 ) / 100) /7 );
+        height:calc((((100vh - 160px) * 95 ) / 100) /7 ) ;
+        line-height:calc((((100vh - 160px) * 95 ) / 100) /7 ) ;
+        text-align: center;
+       border: 1px solid black;
+        }
+
+ .clicked{
+    background-color: aqua;
+ }
+
+ .clicked-bomba{
+   background-color: red;
+ }
+ 
+
+ /* bonus */
+
+ #difficolta{
+   margin-right: 10px;
+ }
+ 
+ 
