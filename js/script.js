@@ -8,6 +8,10 @@ const playButton = document.getElementById("play");
 const difficolta = document.getElementById("difficolta");
 
 
+const messaggioDiv = document.createElement("div");
+messaggioDiv.classList.add("messaggio");
+
+
 
 
 
@@ -45,8 +49,11 @@ playButton.addEventListener("click", function () {
             // Se la cella è una bomba
             if (bombe.includes(i + 1)) {
                 newElement.classList.add("clicked-bomba");
-                alert("Hai calpestato una bomba! Il tuo punteggio è: " + document.querySelectorAll('.clicked').length);
-                // Aggiungi altre logiche di fine partita se necessario
+                
+                
+                messaggioDiv.textContent = "Hai calpestato una bomba! Il tuo punteggio è: " + document.querySelectorAll('.clicked').length;
+                document.body.appendChild(messaggioDiv);
+
             } else {
                 newElement.classList.add("clicked");
                 // Aggiungi altre logiche di gioco se necessario

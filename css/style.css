@@ -110,6 +110,20 @@ border: 1px solid black;
  .clicked-bomba{
    background-color: red;
  }
+
+
+ .messaggio {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background-color: rgba(255, 0, 0, 0.8); /* Sfondo rosso traslucido */
+   color: white;
+   text-align: center;
+   padding: 10px;
+   font-size: 18px;
+   z-index: 1000; /* Assicura che sia sopra gli altri elementi */
+}
  
 
  /* bonus */
